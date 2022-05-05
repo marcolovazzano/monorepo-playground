@@ -14,6 +14,3 @@
 
 * **release:** add permission ([330f92b](https://github.com/marcolovazzano/monorepo-playground/commit/330f92b41be002da6460c91dc6db8f7aabfe01bb))
 * **release:** disable install dependencies ([d8cbb01](https://github.com/marcolovazzano/monorepo-playground/commit/d8cbb01058e8bb57c5eff85523edfc765c627fa6))
-
-# Changelog
-All notable changes to this project will be documented in this file.
