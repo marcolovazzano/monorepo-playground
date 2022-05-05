@@ -1,0 +1,61 @@
+name: Full Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-type:
+        description: 'Type of run to be performed'
+        required: true
+        type: choice
+        options: 
+        - dryrun
+        - run
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.2
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.1.1
+        with:
+          node-version: 'lts/*'
+        
+      - name: Install dependencies
+        run: npx ci
+       
+      # semantic-release: it comes pre-installed in GitHub actions by default
+      - name: Install semantic-release extra plugins
+        run: |
+              npm install --save-dev \
+                semantic-release \
+                @semantic-release/commit-analyzer \
+                @semantic-release/changelog \
+                @semantic-release/git \
+                @semantic-release/release-notes-generator \
+                @semantic-release/exec \
+                conventional-changelog-conventionalcommits
+      
+      - name: Dry-Run
+        if: ${{ github.event.inputs.release-type == 'dryrun' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx semantic-release --dry-run --no-ci
+          echo "::set-output name=nextversion::$(cat .VERSION)"
+
+      - name: Release
+        if: ${{ github.event.inputs.release-type == 'run' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx semantic-release
+      
+      - name: Version
+        id: version
+        run: |
+          nextversion=$(cat .VERSION)
+          echo "Next version: $nextversion"
