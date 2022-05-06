@@ -8,6 +8,16 @@ module.exports = {
       'channel': 'channel-${name}',
       'prerelease': true
     },
+    {
+      'name': 'beta', 
+      'channel': 'channel-${name}',
+      'prerelease': true
+    },
+    {
+      'name': 'alpha', 
+      'channel': 'channel-${name}',
+      'prerelease': true
+    },
   ],
   'repositoryUrl': 'https://github.com/marcolovazzano/monorepo-playground',
   'tagFormat': 'v${version}',
