@@ -1,5 +1,17 @@
 # Release Changelog
 
+## [1.3.0](https://github.com/marcolovazzano/monorepo-playground/compare/v1.2.0...v1.3.0) (2022-05-06)
+
+
+### Features
+
+* **security:** add dependabot config ([9e055d2](https://github.com/marcolovazzano/monorepo-playground/commit/9e055d2608bf78803650e0c66a2be384fd790c4d))
+
+
+### Bug Fixes
+
+* **workflow:** bump checkout version ([5dd6301](https://github.com/marcolovazzano/monorepo-playground/commit/5dd6301e29856697e71fcca6ad53fb88e716c61a))
+
 ## [1.2.0](https://github.com/marcolovazzano/monorepo-playground/compare/v1.1.0...v1.2.0) (2022-05-06)
 
 
