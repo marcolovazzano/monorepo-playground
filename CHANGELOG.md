@@ -1,5 +1,12 @@
 # Release Changelog
 
+## [1.1.0](https://github.com/marcolovazzano/monorepo-playground/compare/v1.0.0...v1.1.0) (2022-05-06)
+
+
+### Features
+
+* add components ([e3084b0](https://github.com/marcolovazzano/monorepo-playground/commit/e3084b014387d1bc366b190862d3f4ddd7026cd7))
+
 ## 1.0.0 (2022-05-05)
 
 
