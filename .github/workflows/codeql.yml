@@ -9,6 +9,9 @@ on:
       - develop
       - main
     types: [opened, synchronize, reopened, edited]
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
 
 jobs:
   analyze:
