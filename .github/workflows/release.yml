@@ -11,6 +11,8 @@ on:
         - dryrun
         - run
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   release:
     runs-on: ubuntu-latest
