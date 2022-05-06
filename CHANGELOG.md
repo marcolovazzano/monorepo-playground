@@ -1,5 +1,18 @@
 # Release Changelog
 
+## [1.2.0](https://github.com/marcolovazzano/monorepo-playground/compare/v1.1.0...v1.2.0) (2022-05-06)
+
+
+### Features
+
+* update configurations ([fbc3d7a](https://github.com/marcolovazzano/monorepo-playground/commit/fbc3d7ae86108960a5f0406359a2e371a08cbf48))
+
+
+### Bug Fixes
+
+* **workflow:** exclude main for commitlint ([79f1d1c](https://github.com/marcolovazzano/monorepo-playground/commit/79f1d1ccb7f6e207cdb3e8989a4bc8547af2bbf9))
+* **workflow:** exclude main for commitlint ([e63fc38](https://github.com/marcolovazzano/monorepo-playground/commit/e63fc38df44b1ee690a54051d19f021dbe5ff6aa))
+
 ## [1.1.0](https://github.com/marcolovazzano/monorepo-playground/compare/v1.0.0...v1.1.0) (2022-05-06)
 
 
