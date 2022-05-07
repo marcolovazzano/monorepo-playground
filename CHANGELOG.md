@@ -1,5 +1,22 @@
 # Release Changelog
 
+## [2.0.0](https://github.com/marcolovazzano/monorepo-playground/compare/v1.3.0...v2.0.0) (2022-05-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* clean up
+
+### Features
+
+* clean up ([174b094](https://github.com/marcolovazzano/monorepo-playground/commit/174b09465ef2bd47ad133156d0c9405d1f65769f))
+* **workflow:** add codeql analysis ([b1b2574](https://github.com/marcolovazzano/monorepo-playground/commit/b1b2574a93ffb6a1d732f36ada05ef12658d1dd3))
+
+
+### Bug Fixes
+
+* **workflow:** add schedule and manual dispatch ([2b4ceb3](https://github.com/marcolovazzano/monorepo-playground/commit/2b4ceb3fd6fec1391448e765aa80c438997c1009))
+
 ## [1.3.0](https://github.com/marcolovazzano/monorepo-playground/compare/v1.2.0...v1.3.0) (2022-05-06)
 
 
