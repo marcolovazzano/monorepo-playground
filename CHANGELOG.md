@@ -1,5 +1,25 @@
 # Release Changelog
 
+## [3.0.0](https://github.com/marcolovazzano/semantic-release/compare/v2.0.0...v3.0.0) (2022-05-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* manage protected branches
+
+### Features
+
+* manage protected branches ([822bd82](https://github.com/marcolovazzano/semantic-release/commit/822bd82e708b7edb925eba47bdb8fc171df96c04))
+
+
+### Bug Fixes
+
+* **workflow:** restore token ([373f85f](https://github.com/marcolovazzano/semantic-release/commit/373f85f2c4d04555d5ee5e1e44e28088ba99258e))
+* **workflow:** update token ([837067f](https://github.com/marcolovazzano/semantic-release/commit/837067f7bf7fae5b8fcc67f13da887a25b185883))
+* **release:** update config ([7479298](https://github.com/marcolovazzano/semantic-release/commit/74792987b45605158c10308e0f9c2b022e78bbcb))
+* **workflow:** add permissions ([038fb42](https://github.com/marcolovazzano/semantic-release/commit/038fb4212b76b956292c66353cc89f2dace11c20))
+* **workflow:** move echo ([90a8112](https://github.com/marcolovazzano/semantic-release/commit/90a8112e8878bea1ff38e4fd23f52682ebfa1723))
+
 ## [2.0.0](https://github.com/marcolovazzano/monorepo-playground/compare/v1.3.0...v2.0.0) (2022-05-07)
 
 
