@@ -51,14 +51,14 @@ jobs:
       - name: Dry-Run
         if: ${{ github.event.inputs.release-type == 'dryrun' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
           npx semantic-release --dry-run --no-ci
 
       - name: Release
         if: ${{ github.event.inputs.release-type == 'run' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
           npx semantic-release
       
