@@ -19,7 +19,7 @@ module.exports = {
       'prerelease': true
     },
   ],
-  'repositoryUrl': 'https://github.com/marcolovazzano/monorepo-playground',
+  'repositoryUrl': 'https://github.com/marcolovazzano/semantic-release',
   'tagFormat': 'v${version}',
   'preset': 'conventionalcommits',
   'plugins': [
