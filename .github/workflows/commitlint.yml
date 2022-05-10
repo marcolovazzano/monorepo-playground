@@ -9,6 +9,9 @@ on:
       - develop
       - main
     types: [opened, synchronize, reopened, edited]
+    
+permissions:
+  contents: read
 
 jobs:
   commitlint:
