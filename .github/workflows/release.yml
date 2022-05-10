@@ -24,6 +24,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.0.2
+        with:
+          # an ad-hoc token (PAT) is need in order to permit the "push" to a protected branch (in this case 'main')
+          # persist-credentials must be true and the same token is used in semantic-release step
+          token: ${{ secrets.SEMANTICRELEASE }}
+          persist-credentials: 'true'
+          # Alternatively, it is possible to disable persist-credentials
+          # and use the ad-hoc token (PAT) in semantic-release step
+          # persist-credentials: 'false'
       
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.1.1
@@ -51,14 +59,18 @@ jobs:
       - name: Dry-Run
         if: ${{ github.event.inputs.release-type == 'dryrun' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # ad-hoc token (PAT) in order to permit the push on a protected branch
+          # without protected branches can be use secrets.GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
           npx semantic-release --dry-run --no-ci
 
       - name: Release
         if: ${{ github.event.inputs.release-type == 'run' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # ad-hoc token (PAT) in order to permit the push on a protected branch
+          # without protected branches can be use secrets.GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
           npx semantic-release
       
