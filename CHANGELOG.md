@@ -1,5 +1,12 @@
 # Release Changelog
 
+### [3.0.1](https://github.com/marcolovazzano/semantic-release/compare/v3.0.0...v3.0.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* **workflow:** remove pullrequest types ([d09deb2](https://github.com/marcolovazzano/semantic-release/commit/d09deb203678cfc865dd42238589d918a085ae85))
+
 ## [3.0.0](https://github.com/marcolovazzano/semantic-release/compare/v2.0.0...v3.0.0) (2022-05-10)
 
 
