@@ -1,5 +1,13 @@
 # Release Changelog
 
+### [3.0.2](https://github.com/marcolovazzano/semantic-release/compare/v3.0.1...v3.0.2) (2022-05-13)
+
+
+### Bug Fixes
+
+* **workflow:** commitlint to all pushed commit ([cf912d1](https://github.com/marcolovazzano/semantic-release/commit/cf912d1f5045a7e32e59ffc431400398640b00fa))
+* remove duplication ([2d6645b](https://github.com/marcolovazzano/semantic-release/commit/2d6645bfb2ae1b57ef5263b7f598e4f2a1f8f5da))
+
 ### [3.0.1](https://github.com/marcolovazzano/semantic-release/compare/v3.0.0...v3.0.1) (2022-05-10)
 
 
