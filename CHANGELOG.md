@@ -1,5 +1,12 @@
 # Release Changelog
 
+## [3.1.0](https://github.com/marcolovazzano/semantic-release/compare/v3.0.2...3.1.0) (2022-05-14)
+
+
+### Features
+
+* **release:** change release tag format ([107446b](https://github.com/marcolovazzano/semantic-release/commit/107446b1c52e1da9512403c94d60bb8dc0b5613b))
+
 ### [3.0.2](https://github.com/marcolovazzano/semantic-release/compare/v3.0.1...v3.0.2) (2022-05-13)
 
 
