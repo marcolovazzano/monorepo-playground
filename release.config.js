@@ -20,7 +20,7 @@ module.exports = {
     },
   ],
   'repositoryUrl': 'https://github.com/marcolovazzano/semantic-release',
-  'tagFormat': 'v${version}',
+  'tagFormat': '${version}',
   'preset': 'conventionalcommits',
   'plugins': [
     ['@semantic-release/commit-analyzer', {
