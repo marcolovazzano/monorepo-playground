@@ -4,5 +4,4 @@ sample repo using [semantic-release](https://github.com/semantic-release/semanti
 
 ## workflows
 - `commitlint.yml`: dispatch on push (feat/**), on pull_request and checks the commit messages associated if they are conform to the conventional commmit specs
-- `codeql.yml`: dispatch on push (feat/**), on pull_request and scheduled , performs a CodeQL analysis
 - `release`: dispatch manually, performs the release process
