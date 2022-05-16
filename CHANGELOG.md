@@ -1,5 +1,18 @@
 # Release Changelog
 
+## [3.2.0](https://github.com/marcolovazzano/semantic-release/compare/3.1.0...3.2.0) (2022-05-16)
+
+
+### Features
+
+* **workflow:** remove codeql ([b125122](https://github.com/marcolovazzano/semantic-release/commit/b1251223533a843400687c1f87fe7b7a4dc6ffeb))
+
+
+### Bug Fixes
+
+* add java to codeql ([04eeb45](https://github.com/marcolovazzano/semantic-release/commit/04eeb451544463ac79c30823b3e7046e21fafec1))
+* **workflow:** use action major version ([07a40bb](https://github.com/marcolovazzano/semantic-release/commit/07a40bb75be1698c43dfd1fb55c46d34610d5d33))
+
 ## [3.1.0](https://github.com/marcolovazzano/semantic-release/compare/v3.0.2...3.1.0) (2022-05-14)
 
 
