@@ -3,8 +3,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     commit-message:
-      prefix: "chore(workflow): "
-      prefix-development: "chore"
+      prefix: "chore: "
       include: "scope"
     labels:
       - "github-actions"
