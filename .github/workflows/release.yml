@@ -85,10 +85,10 @@ jobs:
           
       - name: Summary
         run: |
-          if [ ${{ github.event.inputs.release-type }} = "dry-run" ]; then
-            echo "Run-type: **dry-run**" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.event.inputs.release-type }}" = "dry-run" ]; then
+            echo "## Run-type: **dry-run**" >> $GITHUB_STEP_SUMMARY
           else
-            echo "Run-type: **run** " >> $GITHUB_STEP_SUMMARY
+            echo "## Run-type: **run** " >> $GITHUB_STEP_SUMMARY
           fi
           if [[ ! -z "${{ steps.version.outputs.nextversion }}" ]]; then
             echo "✅ Published release ${{ steps.version.outputs.nextversion }} on default channel!" >> $GITHUB_STEP_SUMMARY
