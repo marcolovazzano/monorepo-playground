@@ -1,5 +1,13 @@
 # Release Changelog
 
+### [3.2.1](https://github.com/marcolovazzano/semantic-release/compare/3.2.0...3.2.1) (2022-05-19)
+
+
+### Bug Fixes
+
+* **dependabot:** prefix messagr ([cfaaa07](https://github.com/marcolovazzano/semantic-release/commit/cfaaa0761d15d437a9f9c0420598b7c49a5eb6be))
+* **dependabot:** update prefix commit to chore ([da4b457](https://github.com/marcolovazzano/semantic-release/commit/da4b4579c46f7e78bd83537d479998d68f2e5fb8))
+
 ## [3.2.0](https://github.com/marcolovazzano/semantic-release/compare/3.1.0...3.2.0) (2022-05-16)
 
 
