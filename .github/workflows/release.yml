@@ -82,4 +82,17 @@ jobs:
           nextversion=$(cat .VERSION)
           echo "::set-output name=nextversion::$nextversion"
           echo "Next version: $nextversion"
+          
+      - name: Summary
+        run: |
+          if [ ${{ github.event.inputs.release-type }} = "dry-run" ]; then
+            echo "Run-type: **dry-run**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Run-type: **run** " >> $GITHUB_STEP_SUMMARY
+          fi
+          if [[ ! -z "${{ steps.version.outputs.nextversion }}" ]]; then
+            echo "✅ Published release ${{ steps.version.outputs.nextversion }} on default channel!" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ There are no relevant changes, so no new version is released!" >> $GITHUB_STEP_SUMMARY
+          fi
 
