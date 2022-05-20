@@ -85,14 +85,16 @@ jobs:
           
       - name: Summary
         run: |
+          nextversion=$(cat .VERSION)
+
           if [ "${{ github.event.inputs.release-type }}" = "dry-run" ]; then
-            echo "## Run-type: **dry-run**" >> $GITHUB_STEP_SUMMARY
+            echo "## Run-type: **DRY-RUN**" >> $GITHUB_STEP_SUMMARY
           else
-            echo "## Run-type: **run** " >> $GITHUB_STEP_SUMMARY
+            echo "## Run-type: **RUN** " >> $GITHUB_STEP_SUMMARY
           fi
-          if [[ ! -z "${{ steps.version.outputs.nextversion }}" ]]; then
+
+          if [[ $nextversion =~ ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$ ]]; then
             echo "✅ Published release ${{ steps.version.outputs.nextversion }} on default channel!" >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ There are no relevant changes, so no new version is released!" >> $GITHUB_STEP_SUMMARY
           fi
-
