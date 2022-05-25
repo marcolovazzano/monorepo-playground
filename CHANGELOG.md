@@ -1,5 +1,12 @@
 # Release Changelog
 
+### [3.2.2](https://github.com/marcolovazzano/semantic-release/compare/3.2.1...3.2.2) (2022-05-25)
+
+
+### Bug Fixes
+
+* **workflow:** add fetch all history ([2ba5617](https://github.com/marcolovazzano/semantic-release/commit/2ba56178ca7b15c6f4ecf9446c974102b0d6da3f))
+
 ### [3.2.1](https://github.com/marcolovazzano/semantic-release/compare/3.2.0...3.2.1) (2022-05-19)
 
 
