@@ -82,11 +82,19 @@ jobs:
         id: version
         run: |
           nextversion=$(cat .VERSION)
+          regex="^([0-9].[0-9].[0-9](-[A-Za-z].[0-9])?)"
+          runtype=${{ github.event.inputs.release-type }}
           echo "::set-output name=nextversion::$nextversion"
-          echo "Next version: $nextversion"
 
-          if [[ $nextversion =~ ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$ ]]; then
-            echo "✅ Release ${{ steps.version.outputs.nextversion }} published!" >> $GITHUB_STEP_SUMMARY
+          if [[ $nextversion =~ $regex ]]; then
+            case $runtype in
+              dry-run)
+                echo "✅ Release ${{ steps.version.outputs.nextversion }} will be published!" >> $GITHUB_STEP_SUMMARY
+                ;;
+              run)
+                echo "✅ Release ${{ steps.version.outputs.nextversion }} published!" >> $GITHUB_STEP_SUMMARY
+                ;;
+            esac
           else
             echo "❌ There are no relevant changes, so no new version is released!" >> $GITHUB_STEP_SUMMARY
           fi
