@@ -89,10 +89,10 @@ jobs:
           if [[ $nextversion =~ $regex ]]; then
             case $runtype in
               dryrun)
-                echo "✅ Release ${{ steps.version.outputs.nextversion }} will be published!" >> $GITHUB_STEP_SUMMARY
+                echo "✅ Release $nextversion will be published!" >> $GITHUB_STEP_SUMMARY
                 ;;
               run)
-                echo "✅ Release ${{ steps.version.outputs.nextversion }} published!" >> $GITHUB_STEP_SUMMARY
+                echo "✅ Release $nextversion published!" >> $GITHUB_STEP_SUMMARY
                 ;;
             esac
           else
