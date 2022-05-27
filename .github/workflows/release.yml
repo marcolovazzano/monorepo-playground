@@ -7,7 +7,7 @@ on:
         description: 'Type of run to be performed'
         required: true
         type: choice
-        options: 
+        options:
         - dryrun
         - run
 
@@ -16,11 +16,11 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   release:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
-      issues: write  
-    
+      issues: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -34,15 +34,15 @@ jobs:
           persist-credentials: 'true'
           # fetch all history for all branches and tags
           fetch-depth: '0'
-      
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-        
+
       # - name: Install dependencies
       #   run: npx ci
-       
+
       # semantic-release: it comes pre-installed in GitHub actions by default
       - name: Install semantic-release extra plugins
         run: |
@@ -56,8 +56,8 @@ jobs:
                 conventional-changelog-conventionalcommits
 
       - name: Create .VERSION file
-        run: echo "There are no relevant changes, so no new version is released" > .VERSION 
-      
+        run: echo "There are no relevant changes, so no new version is released" > .VERSION
+
       - name: Dry-Run
         if: ${{ github.event.inputs.release-type == 'dryrun' }}
         env:
@@ -65,7 +65,7 @@ jobs:
           # without protected branches can be use secrets.GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
-          echo "## Run-type: **DRY-RUN**" >> $GITHUB_STEP_SUMMARY
+          echo "## **DRY-RUN**" >> $GITHUB_STEP_SUMMARY
           npx semantic-release --dry-run --no-ci
 
       - name: Release
@@ -75,18 +75,18 @@ jobs:
           # without protected branches can be use secrets.GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
-          echo "## Run-type: **RUN** " >> $GITHUB_STEP_SUMMARY
+          echo "## **RUN** " >> $GITHUB_STEP_SUMMARY
           npx semantic-release
-      
+
       - name: Version
         id: version
         run: |
           nextversion=$(cat .VERSION)
           echo "::set-output name=nextversion::$nextversion"
           echo "Next version: $nextversion"
-          
+
           if [[ $nextversion =~ ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$ ]]; then
-            echo "✅ Published release ${{ steps.version.outputs.nextversion }} on default channel!" >> $GITHUB_STEP_SUMMARY
+            echo "✅ Release ${{ steps.version.outputs.nextversion }} published!" >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ There are no relevant changes, so no new version is released!" >> $GITHUB_STEP_SUMMARY
           fi
