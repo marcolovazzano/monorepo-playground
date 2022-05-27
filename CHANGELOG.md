@@ -1,5 +1,18 @@
 # Release Changelog
 
+## [3.3.0](https://github.com/marcolovazzano/semantic-release/compare/3.2.2...3.3.0) (2022-05-27)
+
+
+### Features
+
+* **workflow:** add release summary ([b43899b](https://github.com/marcolovazzano/semantic-release/commit/b43899bcdadca869ee2f18b2004cbfa6f892af67))
+
+
+### Bug Fixes
+
+* **workflow:** fix case option ([b6dddf8](https://github.com/marcolovazzano/semantic-release/commit/b6dddf8f10fe66458caedf65e9c91213d0c6b2ff))
+* regex and summary message ([b1df391](https://github.com/marcolovazzano/semantic-release/commit/b1df391095e9f07a2dc84a67235eea1f8e734b0f))
+
 ### [3.2.2](https://github.com/marcolovazzano/semantic-release/compare/3.2.1...3.2.2) (2022-05-25)
 
 
