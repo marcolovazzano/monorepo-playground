@@ -1,15 +1,7 @@
-name: Release
+name: Dry Release
 
 on:
   workflow_dispatch:
-    inputs:
-      release-type:
-        description: 'Type of run to be performed'
-        required: true
-        type: choice
-        options:
-        - dryrun
-        - run
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -18,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
-      issues: write
+      contents: read
+      issues: read
 
     steps:
       - name: Checkout
@@ -58,14 +50,14 @@ jobs:
       - name: Create .VERSION file
         run: echo "There are no relevant changes, so no new version is released" > .VERSION
 
-      - name: Release
+      - name: Dry-Run
         env:
           # ad-hoc token (PAT) in order to permit the push on a protected branch
           # without protected branches can be use secrets.GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
-          echo "## **RUN** " >> $GITHUB_STEP_SUMMARY
-          npx semantic-release
+          echo "## **DRY-RUN**" >> $GITHUB_STEP_SUMMARY
+          npx semantic-release --dry-run --no-ci
 
       - name: Version
         id: version
