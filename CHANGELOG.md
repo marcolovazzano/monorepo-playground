@@ -1,5 +1,12 @@
 # Release Changelog
 
+## [3.3.1](https://github.com/marcolovazzano/semantic-release/compare/3.3.0...3.3.1) (2022-05-31)
+
+
+### Bug Fixes
+
+* **workflow:** print nextversion on summary ([3669192](https://github.com/marcolovazzano/semantic-release/commit/36691923bb2132ab86823af3bff79f22551c7a19))
+
 ## [3.3.0](https://github.com/marcolovazzano/semantic-release/compare/3.2.2...3.3.0) (2022-05-27)
 
 
