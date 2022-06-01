@@ -36,7 +36,11 @@ jobs:
       - name: Validate push commits
         if: ${{ github.event_name == 'push' }}
         run: |
-          npx commitlint --from ${{ github.event.before }} --to ${{ github.event.after }} --verbose
+          if [ ${{ github.event.before }} = '0000000000000000000000000000000000000000' ]; then
+            npx commitlint --from ${{ github.event.after }} --verbose
+          else
+            npx commitlint --from ${{ github.event.before }} --to ${{ github.event.after }} --verbose
+          fi
       
       - name: Validate pr commits
         if: ${{ github.event_name == 'pull_request' }}
