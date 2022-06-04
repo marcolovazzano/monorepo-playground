@@ -1,4 +1,4 @@
-name: Release
+name: Dry Release
 
 on:
   workflow_dispatch:
@@ -10,21 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
-      issues: write
+      contents: read
+      issues: read
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          # an ad-hoc token (PAT) is need in order to permit the "push" to a protected branch (in this case 'main')
-          # persist-credentials must be true and the same token is used in semantic-release step
-          token: ${{ secrets.SEMANTICRELEASE }}
-          # alternatively, it is possible to disable persist-credentials
-          # and use the ad-hoc token (PAT) in semantic-release step
-          # persist-credentials: 'false
-          persist-credentials: 'true'
-          # fetch all history for all branches and tags
           fetch-depth: '0'
 
       - name: Setup Node.js environment
@@ -47,14 +39,10 @@ jobs:
       - name: Create .VERSION file
         run: echo "There are no relevant changes, so no new version is released" > .VERSION
 
-      - name: Release
-        env:
-          # ad-hoc token (PAT) in order to permit the push on a protected branch
-          # without protected branches can be use secrets.GITHUB_TOKEN
-          GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
+      - name: Dry-Run
         run: |
-          echo "## **RUN** " >> $GITHUB_STEP_SUMMARY
-          npx semantic-release
+          echo "## **DRY-RUN**" >> $GITHUB_STEP_SUMMARY
+          npx semantic-release --dry-run --no-ci
 
       - name: Summary
         id: version
