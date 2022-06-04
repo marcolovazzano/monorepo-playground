@@ -1,5 +1,24 @@
 # Release Changelog
 
+## [4.0.0](https://github.com/marcolovazzano/semantic-release/compare/3.3.1...4.0.0) (2022-06-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* split release workflow (#9)
+
+### Features
+
+* split release workflow ([#9](https://github.com/marcolovazzano/semantic-release/issues/9)) ([38c34a7](https://github.com/marcolovazzano/semantic-release/commit/38c34a77db6459ff7aea14ffd8411ce32e89b842))
+
+
+### Bug Fixes
+
+* **dependabot:** add reviewer ([45911ec](https://github.com/marcolovazzano/semantic-release/commit/45911ecec19991f8b41446b599484349f5f476bf))
+* **dependabot:** dependabot prefix ([cf32bba](https://github.com/marcolovazzano/semantic-release/commit/cf32bbab9394dc5ac2f71ff644e36714bf34e7fb))
+* **workflow:** missing token ([728c661](https://github.com/marcolovazzano/semantic-release/commit/728c661d3c5168d19082471ebae64bccf88d089d))
+* **workflow:** push event on create branch event ([763c5c5](https://github.com/marcolovazzano/semantic-release/commit/763c5c5ce715a50fc18e25ba49629ff5c1d6fbdf))
+
 ## [3.3.1](https://github.com/marcolovazzano/semantic-release/compare/3.3.0...3.3.1) (2022-05-31)
 
 
