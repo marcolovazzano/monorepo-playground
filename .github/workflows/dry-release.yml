@@ -44,7 +44,7 @@ jobs:
           echo "## **DRY-RUN**" >> $GITHUB_STEP_SUMMARY
           npx semantic-release --dry-run --no-ci
 
-      - name: Version
+      - name: Summary
         id: version
         run: |
           nextversion=$(cat .VERSION)

@@ -56,7 +56,7 @@ jobs:
           echo "## **RUN** " >> $GITHUB_STEP_SUMMARY
           npx semantic-release
 
-      - name: Version
+      - name: Summary
         id: version
         run: |
           nextversion=$(cat .VERSION)
