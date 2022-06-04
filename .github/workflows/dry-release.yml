@@ -6,7 +6,7 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
+  dry-release:
     runs-on: ubuntu-latest
 
     permissions:
