@@ -54,7 +54,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
           echo "## **DRY-RUN**" >> $GITHUB_STEP_SUMMARY
-          npx semantic-release --dry-run --no-ci
+          npx semantic-release --dry-run --no-ci --branches "${GITHUB_REF#refs/heads/}"
 
       - name: Summary
         id: version
