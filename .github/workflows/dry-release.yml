@@ -45,7 +45,10 @@ jobs:
                 conventional-changelog-conventionalcommits
 
       - name: Create .VERSION file
-        run: echo "There are no relevant changes, so no new version is released" > .VERSION
+        run: echo "### There are no relevant changes, so no new version is released" > .VERSION
+
+      - name: Create .NOTES file
+        run: echo "### There are no relevant changes, so no new version is released" > .NOTES
 
       - name: Dry-Run
         env:
@@ -54,7 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
           echo "## **DRY-RUN**" >> $GITHUB_STEP_SUMMARY
-          npx semantic-release --dry-run --no-ci
+          npx semantic-release --dry-run --no-ci --branches "${GITHUB_REF#refs/heads/}"
 
       - name: Summary
         id: version
@@ -64,7 +67,9 @@ jobs:
           echo "::set-output name=nextversion::$nextversion"
 
           if [[ $nextversion =~ $regex ]]; then
-            echo "✅ Release $nextversion will be published!" >> $GITHUB_STEP_SUMMARY
+            echo "### ✅ Release $nextversion will be published!" >> $GITHUB_STEP_SUMMARY
+            echo "---" >> $GITHUB_STEP_SUMMARY
+            cat .NOTES  >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ There are no relevant changes, so no new version is released!" >> $GITHUB_STEP_SUMMARY
           fi

@@ -34,6 +34,7 @@ module.exports = {
     ],
     ['@semantic-release/exec', {
         'verifyReleaseCmd': 'echo ${nextRelease.version} > .VERSION',
+        'generateNotesCmd': 'echo "${nextRelease.notes}" > .NOTES',
       }
     ],
     ['@semantic-release/changelog', {
