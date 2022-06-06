@@ -1,5 +1,12 @@
 # Release Changelog
 
+## [4.1.0](https://github.com/marcolovazzano/semantic-release/compare/4.0.0...4.1.0) (2022-06-06)
+
+
+### Features
+
+* **workflow:** add notes to summary workflow ([b4fc37a](https://github.com/marcolovazzano/semantic-release/commit/b4fc37a3acaed377af674763f371c4244c8643e8))
+
 ## [4.0.0](https://github.com/marcolovazzano/semantic-release/compare/3.3.1...4.0.0) (2022-06-04)
 
 
