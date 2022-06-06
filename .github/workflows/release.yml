@@ -47,6 +47,9 @@ jobs:
       - name: Create .VERSION file
         run: echo "There are no relevant changes, so no new version is released" > .VERSION
 
+      - name: Create .NOTES file
+        run: echo "There are no relevant changes, so no new version is released" > .NOTES
+
       - name: Release
         env:
           # ad-hoc token (PAT) in order to permit the push on a protected branch
@@ -64,7 +67,7 @@ jobs:
           echo "::set-output name=nextversion::$nextversion"
 
           if [[ $nextversion =~ $regex ]]; then
-            echo "## ✅ Release $nextversion will be published!" >> $GITHUB_STEP_SUMMARY
+            echo "## ✅ Release $nextversion published!" >> $GITHUB_STEP_SUMMARY
             echo "## Changelog" >> $GITHUB_STEP_SUMMARY
             cat .NOTES  >> $GITHUB_STEP_SUMMARY
           else
