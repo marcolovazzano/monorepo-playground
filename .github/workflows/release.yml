@@ -17,6 +17,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          # this allow the workflow to be rerun after changes have been pushed from previous jobs
+          ref: ${{ github.ref }}
           # an ad-hoc token (PAT) is need in order to permit the "push" to a protected branch (in this case 'main')
           # persist-credentials must be true and the same token is used in semantic-release step
           token: ${{ secrets.SEMANTICRELEASE }}
