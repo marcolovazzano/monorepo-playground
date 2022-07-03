@@ -1,5 +1,12 @@
 # Release Changelog
 
+## [4.1.1](https://github.com/marcolovazzano/semantic-release/compare/4.1.0...4.1.1) (2022-07-03)
+
+
+### Bug Fixes
+
+* **workflow:** fix regex to verify the version ([7cbdeaf](https://github.com/marcolovazzano/semantic-release/commit/7cbdeaf867cc3428d2a91c19c3b4a49cde52640c))
+
 ## [4.1.0](https://github.com/marcolovazzano/semantic-release/compare/4.0.0...4.1.0) (2022-06-06)
 
 
