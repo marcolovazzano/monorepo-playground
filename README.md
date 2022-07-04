@@ -5,3 +5,4 @@ sample repo using [semantic-release](https://github.com/semantic-release/semanti
 ## workflows
 - `commitlint.yml`: dispatch on push (feat/**), on pull_request and checks the commit messages associated if they are conform to the conventional commmit specs
 - `release.yml`: dispatch manually, performs the release process
+- `dry-release.yml`: dispatch manually, performs a dry run of the release process
