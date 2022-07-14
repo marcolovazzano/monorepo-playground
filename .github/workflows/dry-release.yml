@@ -56,7 +56,7 @@ jobs:
           # without protected branches can be use secrets.GITHUB_TOKEN
           GITHUB_TOKEN: ${{ secrets.SEMANTICRELEASE }}
         run: |
-          echo "## **DRY-RUN**" >> $GITHUB_STEP_SUMMARY
+          echo "## **DRY-RUN** on **${GITHUB_REF#refs/heads/}**" >> $GITHUB_STEP_SUMMARY
           npx semantic-release --dry-run --no-ci --branches "${GITHUB_REF#refs/heads/}"
 
       - name: Summary
