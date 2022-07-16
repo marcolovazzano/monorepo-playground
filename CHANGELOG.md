@@ -1,5 +1,12 @@
 # Release Changelog
 
+## [4.2.0](https://github.com/marcolovazzano/semantic-release/compare/4.1.1...4.2.0) (2022-07-16)
+
+
+### Features
+
+* **workflow:** add branch name on summary ([c19b699](https://github.com/marcolovazzano/semantic-release/commit/c19b6999e43e37d8a584cdd36c59547b3ba8b361))
+
 ## [4.1.1](https://github.com/marcolovazzano/semantic-release/compare/4.1.0...4.1.1) (2022-07-03)
 
 
