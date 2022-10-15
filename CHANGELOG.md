@@ -1,5 +1,17 @@
 # Release Changelog
 
+## [4.3.0](https://github.com/marcolovazzano/semantic-release/compare/4.2.0...4.3.0) (2022-10-15)
+
+
+### Features
+
+* **workflow:** update set-output ([c4402cd](https://github.com/marcolovazzano/semantic-release/commit/c4402cde3c431d095c96a5c13dee88b341d607d9))
+
+
+### Bug Fixes
+
+* **workflow:** align regex to verify the version ([c34780a](https://github.com/marcolovazzano/semantic-release/commit/c34780af1c08b3d579b85c2629c043dbecb64673))
+
 ## [4.2.0](https://github.com/marcolovazzano/semantic-release/compare/4.1.1...4.2.0) (2022-07-16)
 
 
