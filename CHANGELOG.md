@@ -1,5 +1,13 @@
 # Release Changelog
 
+## [4.3.1](https://github.com/marcolovazzano/semantic-release/compare/4.3.0...4.3.1) (2022-11-16)
+
+
+### Bug Fixes
+
+* **config:** change exec cmd for notes ([be553a7](https://github.com/marcolovazzano/semantic-release/commit/be553a7eeec7308a1f72c37a4ad3f52b6dd0ec2d))
+* **workflow:** regex semver ([8c0d14a](https://github.com/marcolovazzano/semantic-release/commit/8c0d14a91f3270bf5859d967b876a738f8b64c99))
+
 ## [4.3.0](https://github.com/marcolovazzano/semantic-release/compare/4.2.0...4.3.0) (2022-10-15)
 
 
